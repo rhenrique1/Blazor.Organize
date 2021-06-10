@@ -2,18 +2,32 @@
 @inherits SignInBase
 
 <div class="sign-form">
-  <p class="welcome-text">Hello @(string.IsNullOrEmpty(User.UserName) ? "User" : User.UserName) - Today is @Day!</p>
-  <EditForm Model="@User">
-    <DataAnnotationsValidator/>
-    <InputText type="text" class="sign-input form-control" placeholder="Username" @bind-Value="User.UserName"/>
-    <ValidationMessage For="@(() => User.UserName)"></ValidationMessage>
-    @* <ValidationInput ValueChangedCallback="HandleUserNameValueChanged" Value="@Username"></ValidationInput> *@
-    <InputText type="password" class="sign-input form-control" placeholder="Password" @bind-Value="User.Password"/>
-    <ValidationMessage For="@(() => User.Password)"></ValidationMessage>
+    <p class="welcome-text">Hello @(string.IsNullOrEmpty(User.UserName) ? "User" : User.UserName) - Today is @Day!</p>
+    <EditForm EditContext="@EditContext">
+        <DataAnnotationsValidator />
+        @*<InputText type="text" class="sign-input form-control" placeholder="Username" @bind-Value="User.UserName"/>
+            <ValidationMessage For="@(() => User.UserName)"></ValidationMessage>*@
+        <div class="sign-validation">
+            <ValidationInput
+                             placeholder="Username"
+                             @bind-Value="@User.UserName"
+                             Error="@GetError(() => User.UserName)">
+            </ValidationInput>
+        </div>
 
-    <button class="sign-button btn btn-primary" type="submit">Sign in</button>
-  </EditForm>
-  <div class="signup">
-    <a href="/signup">Sign up</a>
-  </div>
+        @*<InputText type="password" class="sign-input form-control" placeholder="Password" @bind-Value="User.Password"/>
+            <ValidationMessage For="@(() => User.Password)"></ValidationMessage>*@
+        <div class="sign-validation">
+            <ValidationInput
+                             type="password"
+                             placeholder="Password"
+                             @bind-Value="@User.Password"
+                             Error="@GetError(() => User.Password)">
+            </ValidationInput>
+        </div>
+        <button class="sign-button btn btn-primary" type="submit">Sign in</button>
+    </EditForm>
+    <div class="signup">
+        <a href="/signup">Sign up</a>
+    </div>
 </div>
