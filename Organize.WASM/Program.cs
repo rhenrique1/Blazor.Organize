@@ -2,6 +2,9 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Organize.Business;
+using Organize.Shared.Contracts;
+using Organize.TestFake;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -18,6 +21,9 @@ namespace Organize.WASM
             builder.RootComponents.Add<App>("#app");
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+
+            //builder.Services.AddSingleton<IUserManager, UserManager>();
+            builder.Services.AddSingleton<IUserManager, UserManagerFake>();
 
             await builder.Build().RunAsync();
         }
