@@ -1,0 +1,7 @@
+﻿<div>
+    @foreach(var item in UserItems)
+    {
+        <div>@item.Title</div>
+        <ItemElement TItem="BaseItem" Item="@item"></ItemElement>
+    }
+</div>
