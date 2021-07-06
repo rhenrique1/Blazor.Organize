@@ -1,17 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30406.217
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31423.177
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorExample", "BlazorExample\BlazorExample.csproj", "{040C15FC-3CB0-466B-A992-B935AA24A9CD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Organize.WASM", "Organize.WASM\Organize.WASM.csproj", "{A8CEE90F-5B40-4CDA-8115-C0B856AFAF16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organize.Business", "Organize.Business\Organize.Business.csproj", "{2FF8125C-6B65-4761-B21D-A4DE6DCF65DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Organize.Business", "Organize.Business\Organize.Business.csproj", "{2FF8125C-6B65-4761-B21D-A4DE6DCF65DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organize.DataAcess", "Organize.DataAcess\Organize.DataAcess.csproj", "{4C165AFB-D279-421D-BCBB-C8E6216A9F57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Organize.DataAcess", "Organize.DataAcess\Organize.DataAcess.csproj", "{4C165AFB-D279-421D-BCBB-C8E6216A9F57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organize.Shared", "Organize.Shared\Organize.Shared.csproj", "{D24495AE-0591-456E-88EF-4EB4C308E509}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Organize.Shared", "Organize.Shared\Organize.Shared.csproj", "{D24495AE-0591-456E-88EF-4EB4C308E509}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneralUi", "GeneralUi\GeneralUi.csproj", "{47F55A57-2CE6-4773-89F2-71E9E9A306C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{D24495AE-0591-456E-88EF-4EB4C308E509}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D24495AE-0591-456E-88EF-4EB4C308E509}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D24495AE-0591-456E-88EF-4EB4C308E509}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47F55A57-2CE6-4773-89F2-71E9E9A306C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47F55A57-2CE6-4773-89F2-71E9E9A306C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47F55A57-2CE6-4773-89F2-71E9E9A306C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47F55A57-2CE6-4773-89F2-71E9E9A306C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

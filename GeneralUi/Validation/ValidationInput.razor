@@ -1,0 +1,17 @@
+@inherits ValidationInputBase
+<div class="validation container">
+    <input 
+           type="text" 
+           class="sign-input form-control" 
+           @attributes="InputAttributes"
+           @onchange="(async (eventArgs) => await ValueChanged.InvokeAsync(eventArgs.Value.ToString()))" 
+           value="@Value"
+           style="@(string.IsNullOrEmpty(Error) ? "" : "border-top-right-radius: 0; border-bottom-right-radius: 0")">
+    @if (!string.IsNullOrEmpty(Error))
+    {
+        <div class="val-tooltip">
+            <p>!</p>
+            <span class="val-tooltiptext">@Error</span>
+        </div>
+    }
+</div>

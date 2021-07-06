@@ -1,0 +1,58 @@
+﻿@page "/signup"
+@page "/signup/{Username}"
+
+@inherits SignUpBase
+
+<div class="sign-form">
+    <EditForm EditContext="@EditContext" OnValidSubmit="OnValidSubmit">
+        <DataAnnotationsValidator />
+        @*<InputText type="text" class="sign-input form-control" placeholder="Username" @bind-Value="User.UserName"/>
+            <ValidationMessage For="@(() => User.UserName)"></ValidationMessage>*@
+        <div class="sign-validation">
+            <ValidationInput
+                             placeholder="Username"
+                             @bind-Value="@User.UserName"
+                             Error="@GetError(() => User.UserName)">
+            </ValidationInput>
+        </div>
+        <div class="sign-validation">
+            <ValidationInput type="password"
+                             placeholder="Password"
+                             @bind-Value="@User.Password"
+                             Error="@GetError(() => User.Password)">
+            </ValidationInput>
+        </div>
+                <div class="sign-validation">
+            <ValidationInput
+                             placeholder="First Name"
+                             @bind-Value="@User.FirstName"
+                             Error="@GetError(() => User.FirstName)">
+            </ValidationInput>
+        </div>
+                <div class="sign-validation">
+            <ValidationInput
+                             placeholder="Last Name"
+                             @bind-Value="@User.LastName"
+                             Error="@GetError(() => User.LastName)">
+            </ValidationInput>
+        </div>
+                <div class="sign-validation">
+            <ValidationInput
+                             placeholder="Phone number"
+                             @bind-Value="@User.PhoneNumber"
+                             Error="@GetError(() => User.PhoneNumber)">
+            </ValidationInput>
+        </div>
+        <div class="sign-validation">
+            <Dropdown 
+                TValue="GenderTypeEnum"
+                @bind-SelectedItem="@SelectedGenderTypeDropDownItem"
+                SelectableItems="@GenderTypeDropDownItems">
+            </Dropdown>
+        </div>
+        <button class="sign-button btn btn-primary" type="submit">Sign up</button>
+    </EditForm>
+    <div class="signup">
+        <a href="/signin">Sign in</a>
+    </div>
+</div>
