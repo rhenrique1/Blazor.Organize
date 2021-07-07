@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 using Organize.Business;
 using Organize.Shared.Contracts;
 using Organize.TestFake;
+using Organize.WASM.ItemEdit;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -25,6 +26,7 @@ namespace Organize.WASM
             //builder.Services.AddSingleton<IUserManager, UserManager>();
             builder.Services.AddScoped<IUserManager, UserManagerFake>();
             builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
+            builder.Services.AddScoped<ItemEditService>();
 
             var host = builder.Build();
 

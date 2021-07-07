@@ -1,0 +1,7 @@
+﻿<div class="item-create-info">
+    <div class="item-edit-info-text">Type: @ItemCheckBox.ItemTypeEnum.ToString()</div>
+    <div class="item-edit-info-count">@ItemCheckBox.Position/@TotalNumber</div>
+</div>
+
+<label for="title">Title</label>
+<input id="title" type="text" class="item-create-input" @bind-value="@Item.Title" />

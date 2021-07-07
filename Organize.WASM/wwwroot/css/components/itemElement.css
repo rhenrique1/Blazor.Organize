@@ -1,8 +1,7 @@
 ﻿.item-element {
   margin-top: 20px;
   margin-bottom: 20px;
-  width: 100%;
-  background: blue; }
+  width: 100%; }
 
 .item-element-main {
   width: 100%;
@@ -44,3 +43,10 @@
   display: flex;
   justify-content: center;
   align-items: center; }
+
+.detail-fragment {
+  border-width: 2px;
+  border-style: solid;
+  border-top: 0;
+  width: 100%;
+  padding: 10px 0; }
