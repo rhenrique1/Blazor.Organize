@@ -27,6 +27,7 @@ namespace Organize.WASM
             builder.Services.AddScoped<IUserManager, UserManagerFake>();
             builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
             builder.Services.AddScoped<ItemEditService>();
+            builder.Services.AddScoped<IUserItemManager, UserItemManager>();
 
             var host = builder.Build();
 

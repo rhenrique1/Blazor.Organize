@@ -3,12 +3,13 @@ using Organize.Shared.Entities;
 using Organize.WASM.ItemEdit;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Organize.WASM.Components
 {
-    public partial class ItemElement<TItem> : ComponentBase where TItem : BaseItem
+    public partial class ItemElement<TItem> : ComponentBase, IDisposable where TItem : BaseItem
     {
         [Parameter]
         public RenderFragment MainFragment { get; set; }
@@ -38,11 +39,30 @@ namespace Organize.WASM.Components
             DetailAreaId = "detailArea" + Item.Position;
         }
 
+        protected override void OnAfterRender(bool firstRender)
+        {
+            base.OnAfterRender(firstRender);
+            if (firstRender)
+            {
+                Item.PropertyChanged += HandleItemPropertyChanged;
+            }
+        }
+
+        private void HandleItemPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            StateHasChanged();
+        }
+
         private void OpenItemInEditMode()
         {
             //ItemEditService.EditItem = Item;
             Uri.TryCreate("/items/" + Item.ItemTypeEnum + "/" + Item.Id, UriKind.Relative, out var uri);
             NavigationManager.NavigateTo(uri.ToString());
+        }
+
+        public void Dispose()
+        {
+            Item.PropertyChanged -= HandleItemPropertyChanged;
         }
     }
 }

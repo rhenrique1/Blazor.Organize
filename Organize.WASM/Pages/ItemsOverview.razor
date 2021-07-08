@@ -14,3 +14,12 @@
 
     }
 </div>
+
+<div class="item-add-box fixed-bottom">
+    <div class="dropdown item-add-input">
+        <Dropdown TValue="ItemTypeEnum"
+                  SelectableItems="DropDownTypes"
+                  SelectedItemChanged="@(args => SelectedDropDownType = args)"/>
+    </div>
+    <button class="orga-button" @onclick="AddNewAsync" disabled="@(SelectedDropDownType == null)">Add</button>
+</div>
