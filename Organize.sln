@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31423.177
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Organize.WASM", "Organize.WASM\Organize.WASM.csproj", "{A8CEE90F-5B40-4CDA-8115-C0B856AFAF16}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeneralUi", "GeneralUi\GeneralUi.csproj", "{47F55A57-2CE6-4773-89F2-71E9E9A306C9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Organize.TestFake", "Organize.TestFake\Organize.TestFake.csproj", "{0E3B71BF-3E0A-4C63-9898-EC7E1645E9C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organize.InMemoryStorage", "Organize.InMemoryStorage\Organize.InMemoryStorage.csproj", "{4574787B-9155-4407-B94B-F1660C60E48C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{0E3B71BF-3E0A-4C63-9898-EC7E1645E9C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E3B71BF-3E0A-4C63-9898-EC7E1645E9C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E3B71BF-3E0A-4C63-9898-EC7E1645E9C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4574787B-9155-4407-B94B-F1660C60E48C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4574787B-9155-4407-B94B-F1660C60E48C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4574787B-9155-4407-B94B-F1660C60E48C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4574787B-9155-4407-B94B-F1660C60E48C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
