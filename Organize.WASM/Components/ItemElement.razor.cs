@@ -12,7 +12,7 @@ namespace Organize.WASM.Components
     {
         [Parameter]
         public RenderFragment MainFragment { get; set; }
-        
+
         [Parameter]
         public RenderFragment DetailFragment { get; set; }
 
@@ -21,12 +21,15 @@ namespace Organize.WASM.Components
 
         [CascadingParameter]
         public string ColorPrefix { get; set; }
-        
+
         [CascadingParameter]
         public int TotalNumber { get; set; }
 
         [Inject]
-        private ItemEditService ItemEditService { get; set; }
+        private NavigationManager NavigationManager { get; set; }
+
+        //[Inject]
+        //private ItemEditService ItemEditService { get; set; }
         private string DetailAreaId { get; set; }
 
         protected override void OnParametersSet()
@@ -37,7 +40,9 @@ namespace Organize.WASM.Components
 
         private void OpenItemInEditMode()
         {
-            ItemEditService.EditItem = Item;
+            //ItemEditService.EditItem = Item;
+            Uri.TryCreate("/items/" + Item.ItemTypeEnum + "/" + Item.Id, UriKind.Relative, out var uri);
+            NavigationManager.NavigateTo(uri.ToString());
         }
     }
 }
