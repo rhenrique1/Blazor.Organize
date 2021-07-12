@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Primitives;
+using Organize.Shared.Contracts;
 using Organize.Shared.Enums;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,9 @@ namespace Organize.WASM.Pages
     {
         [Inject]
         private NavigationManager NavigationManager { get; set; }
+
+        [Inject]
+        private IUserManager UserManager { get; set; }
         protected IList<DropdownItem<GenderTypeEnum>> GenderTypeDropDownItems { get; } = new List<DropdownItem<GenderTypeEnum>>();
         protected DropdownItem<GenderTypeEnum> SelectedGenderTypeDropDownItem { get; set; }
         
@@ -60,9 +64,9 @@ namespace Organize.WASM.Pages
             }
         }
 
-        protected void OnValidSubmit()
+        protected async void OnValidSubmit()
         {
-            //TODO create user
+            await UserManager.InsertUserAsync(User);
             NavigationManager.NavigateTo("signin");
         }
     }

@@ -19,6 +19,9 @@ namespace Organize.WASM.Pages
         [Inject]
         private IUserManager UserManager { get; set; }
 
+        [Inject]
+        private ICurrentUserService CurrentUserService { get; set; }
+
         protected override void OnInitialized()
         {
             base.OnInitialized();
@@ -42,6 +45,7 @@ namespace Organize.WASM.Pages
 
             if (foundUser != null)
             {
+                CurrentUserService.CurrentUser = foundUser;
                 NavigationManager.NavigateTo("items");
             }
         }
