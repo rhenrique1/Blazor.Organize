@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31424.327
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31423.177
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Organize.WASM", "Organize.WASM\Organize.WASM.csproj", "{A8CEE90F-5B40-4CDA-8115-C0B856AFAF16}"
 EndProject
@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeneralUi", "GeneralUi\Gene
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Organize.TestFake", "Organize.TestFake\Organize.TestFake.csproj", "{0E3B71BF-3E0A-4C63-9898-EC7E1645E9C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organize.InMemoryStorage", "Organize.InMemoryStorage\Organize.InMemoryStorage.csproj", "{4574787B-9155-4407-B94B-F1660C60E48C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Organize.InMemoryStorage", "Organize.InMemoryStorage\Organize.InMemoryStorage.csproj", "{4574787B-9155-4407-B94B-F1660C60E48C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Organize.DataAcess
 {
-    public class ItemDataAcess : IItemDataAccess
+    public class ItemDataAccess : IItemDataAccess
     {
         private IPersistanceService _persistanceService;
 
-        public ItemDataAcess(IPersistanceService persistanceService)
+        public ItemDataAccess(IPersistanceService persistanceService)
         {
             _persistanceService = persistanceService;
         }

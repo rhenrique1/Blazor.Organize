@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Organize.Business;
 using Organize.Shared.Contracts;
 using Organize.Shared.Entities;
 using Organize.WASM.ItemEdit;
@@ -15,13 +16,20 @@ namespace Organize.WASM.Components
     {
         [Inject]
         private ICurrentUserService _currentUserService { get; set; }
+
+        [Inject]
+        private IUserItemManager userItemManager { get; set; }
+
         [Inject]
         private ItemEditService ItemEditService { get; set; }
         protected ObservableCollection<BaseItem> UserItems { get; set; } = new ObservableCollection<BaseItem>();
 
-        protected override void OnInitialized()
+        protected override async Task OnInitializedAsync()
         {
-            base.OnInitialized();
+            await base.OnInitializedAsync();
+
+            await userItemManager.RetrieveAllUserItemsOfUserAndSetToUserAsync(_currentUserService.CurrentUser);
+
             UserItems = _currentUserService.CurrentUser.UserItems;
             UserItems.CollectionChanged += HandleUserItemsCollectionChanged;
         }
